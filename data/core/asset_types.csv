@@ -1,0 +1,8 @@
+asset_type_id,label,description,typical_stages
+RoadBridge,Road bridge,A bridge carrying vehicular traffic.,S-SITE-SETUP;S-ENABLING;S-DEMOLITION;S-EARTHWORKS;S-SUBSTRUCTURE;S-SUPERSTRUCTURE;S-DECK;S-ENVELOPE;S-FINISHES
+FootBridge,Footbridge,A bridge carrying pedestrians or cyclists only.,S-SITE-SETUP;S-ENABLING;S-EARTHWORKS;S-SUBSTRUCTURE;S-SUPERSTRUCTURE;S-DECK;S-FINISHES
+Building,Building,A building of any occupancy.,S-SITE-SETUP;S-ENABLING;S-DEMOLITION;S-EARTHWORKS;S-SUBSTRUCTURE;S-SUPERSTRUCTURE;S-ENVELOPE;S-MEP;S-FINISHES
+Tunnel,Tunnel,A bored or cut-and-cover tunnel.,S-SITE-SETUP;S-ENABLING;S-EARTHWORKS;S-SUBSTRUCTURE;S-ENVELOPE;S-MEP;S-FINISHES
+RoadSection,Road section,"A length of carriageway, including its furniture.",S-SITE-SETUP;S-ENABLING;S-EARTHWORKS;S-FINISHES
+RetainingStructure,Retaining structure,"A retaining wall, sheet-pile wall or reinforced-earth structure.",S-SITE-SETUP;S-EARTHWORKS;S-SUBSTRUCTURE;S-FINISHES
+UtilityNetwork,Utility network,"Buried or overhead services: water, gas, power, telecoms.",S-SITE-SETUP;S-ENABLING;S-EARTHWORKS;S-MEP;S-FINISHES

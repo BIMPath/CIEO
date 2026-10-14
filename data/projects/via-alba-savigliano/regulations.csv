@@ -1,0 +1,4 @@
+regulation_id,short_name,full_title,jurisdiction,instrument_type,domain,in_force_from,source_url,notes
+REG-ANAS-CSA,ANAS CSA,ANAS Capitolato Speciale d'Appalto - bituminous binder characteristics,IT,ContractSpecification,Pavement,,,
+REG-PROJ-SPEC,Project specification,Project-specific technical specification and approved utility relocation plans,IT,ContractSpecification,ProjectSpecific,,,
+REG-PSC-VIA-ALBA,PSC Via Alba,"Piano di Sicurezza e Coordinamento - Nuovo ponte su Via Alba, Savigliano (site safety and coordination plan, Annex XV D.Lgs. 81/2008)",IT,SafetyPlan,OccupationalSafety,,,

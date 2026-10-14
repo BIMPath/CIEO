@@ -1,0 +1,38 @@
+requirement_id,regulation_id,clause_reference,binding_status,confidence,source_url,note
+IR-P1-001,REG-CDS-285-1992,Art. 21,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-04-30;285,
+IR-P1-002,REG-DLGS-81-2008,Allegato XVIII punto 1,PROPOSED,MEDIUM,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P1-003,REG-DLGS-81-2008,Titolo III Capo II Art. 74-79,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P2-004,REG-DLGS-81-2008,Art. 118; Allegato XVIII punto 4,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P2-005,REG-DLGS-81-2008,Titolo V Art. 161-166,PROPOSED,MEDIUM,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P2-006,REG-DLGS-81-2008,Titolo IV Capo I,PROPOSED,MEDIUM,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P3-007,REG-DLGS-81-2008,Art. 118-119,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P3-008,REG-DLGS-81-2008,Art. 118 comma 3; Allegato XVIII punto 4,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P3-009,REG-NTC-2018,Cap. 4.1; EN 1992-1-1,PROPOSED,MEDIUM,https://www.gazzettaufficiale.it/eli/id/2018/2/20/18A00716/sg,
+IR-P3-010,REG-NTC-2018,Cap. 4.1; D.Lgs. 81/2008 Art. 122-126,PROPOSED,MEDIUM,https://www.gazzettaufficiale.it/eli/id/2018/2/20/18A00716/sg,
+IR-P3-011,REG-UNI-7163-72,Conformity control,PROPOSED,MEDIUM,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P3-012,REG-UNI-7466-75,Parts 1-3,PROPOSED,MEDIUM,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P3-013,REG-UNI-9558,Curing and striking,PROPOSED,TO_VERIFY,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P3-014,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-015,REG-DM-09-01-1996,Cover and prestressing provisions,PROPOSED,TO_VERIFY,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P3-035,REG-DLGS-81-2008,"Titolo IV Capo II Art. 111, 113 e Allegato XX",VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P4-016,REG-DLGS-81-2008,Art. 151-156,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P4-017,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-018,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-019,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-020,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-021,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-022,REG-DLGS-81-2008,Art. 153-154,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P4-023,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-024,REG-NTC-2018,Cap. 4.2; Cap. 5.1,PROPOSED,MEDIUM,https://www.gazzettaufficiale.it/eli/id/2018/2/20/18A00716/sg,
+IR-P4-025,REG-DLGS-81-2008,Titolo IV Capo I; Allegato VI,PROPOSED,MEDIUM,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P4-036,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-037,REG-DLGS-81-2008,Titolo III Capo I Art. 71 e Allegato VI punti 3.1.1-3.1.4,VERIFIED,HIGH,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+IR-P5-026,REG-NTC-2018,Cap. 4.1.6,PROPOSED,MEDIUM,https://www.gazzettaufficiale.it/eli/id/2018/2/20/18A00716/sg,
+IR-P5-027,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P5-028,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-029,REG-NTC-2018,Cap. 5.1,PROPOSED,MEDIUM,https://www.gazzettaufficiale.it/eli/id/2018/2/20/18A00716/sg,
+IR-P6-030,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-031,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-032,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-033,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-034,REG-DLGS-81-2008,Titolo IV Capo I,PROPOSED,MEDIUM,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,

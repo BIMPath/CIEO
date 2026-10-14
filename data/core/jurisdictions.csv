@@ -1,0 +1,5 @@
+jurisdiction_id,label,iso_code,scope,authority,language,profile_dir,status,notes
+EU,European Union,EU,supranational,CEN / CENELEC and the European Commission,en,profiles/eu,complete,"Harmonised standards, product standards and approval guidelines. Usable as a base layer under any CEN member state."
+IT,Italy,ITA,national,Stato italiano; UNI; Consiglio Superiore dei Lavori Pubblici,it,profiles/it,complete,The reference profile. Authored against the instruments actually cited in the Via Alba bridge works.
+GB,United Kingdom (Great Britain),GBR,national,Health and Safety Executive,en,profiles/gb,scaffold,"CDM 2015 Part 4 bindings verified against legislation.gov.uk. Work at Height, PPE and LOLER bindings proposed, not yet verified."
+US,United States (federal),USA,national,Occupational Safety and Health Administration,en,profiles/us,scaffold,"29 CFR 1926 bindings. Subparts E, G, M, P and CC verified against osha.gov and ecfr.gov. State-plan states may impose stricter requirements."

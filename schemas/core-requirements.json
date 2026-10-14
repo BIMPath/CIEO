@@ -1,0 +1,167 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "core-requirements",
+  "title": "core/requirements.csv",
+  "description": "What must be true on a construction site, independent of any legal system. The heart of the catalogue, and the file most contributors will extend.",
+  "fields": [
+    {
+      "name": "requirement_id",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "inspection_item",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "requirement_statement",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "expected_condition",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "applies_to_asset_types",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "cieo:separator": ";"
+    },
+    {
+      "name": "stage_ref",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "cieo:references": {
+        "table": "core/work_stages.csv",
+        "field": "stage_id"
+      }
+    },
+    {
+      "name": "target_type",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "target_ifc_class",
+      "type": "string",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "evidence_pattern",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "PresenceOfRequired",
+          "SpatialCompleteness",
+          "ComponentIntegrity",
+          "VerifiedAbsence",
+          "GeometricConformance",
+          "DocumentaryConformance",
+          "MaterialTestConformance"
+        ]
+      }
+    },
+    {
+      "name": "required_classes",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "cieo:separator": ";"
+    },
+    {
+      "name": "prohibited_classes",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "cieo:separator": ";"
+    },
+    {
+      "name": "evidence_modality",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "Visual",
+          "Geometric",
+          "Documentary",
+          "MaterialTest"
+        ]
+      }
+    },
+    {
+      "name": "checkability",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "AUTOMATIC",
+          "ASSISTED",
+          "MANUAL"
+        ]
+      }
+    },
+    {
+      "name": "detectability_tier",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "COARSE",
+          "MEDIUM",
+          "FINE",
+          "NON_VISUAL"
+        ]
+      }
+    },
+    {
+      "name": "required_coverage",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0.0,
+        "maximum": 1.0
+      }
+    },
+    {
+      "name": "hold_point",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "TRUE",
+          "FALSE"
+        ]
+      }
+    },
+    {
+      "name": "notes",
+      "type": "string",
+      "constraints": {
+        "required": false
+      }
+    }
+  ],
+  "primaryKey": "requirement_id"
+}

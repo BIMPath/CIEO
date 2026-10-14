@@ -1,0 +1,26 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 the CIEO contributors.
+
+This licence covers the ontology (ontology/, shapes/, rules/), the data (data/, schemas/)
+and the documentation (README.md, docs/). Source code under src/ and unity/ is licensed
+separately under the MIT licence; see LICENSE-CODE.
+
+You are free to:
+
+  Share  — copy and redistribute the material in any medium or format
+  Adapt  — remix, transform, and build upon the material for any purpose, including
+           commercially
+
+under the following term:
+
+  Attribution — You must give appropriate credit, provide a link to the licence, and
+  indicate if changes were made. You may do so in any reasonable manner, but not in any way
+  that suggests the licensor endorses you or your use.
+
+No warranties are given. The licence may not give you all of the permissions necessary for
+your intended use: a jurisdiction profile is a mapping of requirements onto published legal
+instruments, not legal advice, and the published instruments themselves carry their own
+terms.
+
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode

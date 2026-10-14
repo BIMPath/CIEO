@@ -1,0 +1,20 @@
+# CIEO project descriptor - copy this folder and edit
+project_id: my-project
+name: My project
+asset_type: Building          # see data/core/asset_types.csv
+country: XX
+profiles: [eu]                # see data/core/jurisdictions.csv
+cieo_version: "1.0"
+description: >
+  One paragraph on what is being built and where.
+capture:
+  photographs: 0
+  image_width_px: 4032
+  image_height_px: 3024
+  horizontal_fov_deg: 67
+  captured: YYYY-MM
+files:
+  phases: phases.csv
+  site_abox: site.ttl
+  project_regulations: regulations.csv
+  project_bindings: clause_bindings.csv

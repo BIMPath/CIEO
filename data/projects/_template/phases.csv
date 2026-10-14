@@ -1,0 +1,2 @@
+phase_id,phase_label,sequence,maps_to_stages,description,precedes,active_targets
+P1,Site establishment,1,S-SITE-SETUP,Replace with your own phase.,,WorkZoneBoundary;TrafficManagementZone;Worker

@@ -1,0 +1,38 @@
+requirement_id,regulation_id,clause_reference,binding_status,confidence,source_url,note
+IR-P1-001,REG-US-29CFR1926,1926.200 - Accident prevention signs and tags,VERIFIED,HIGH,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.200,
+IR-P1-002,REG-US-29CFR1926,"Subpart G - Signs, Signals, and Barricades",VERIFIED,MEDIUM,https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1926/subpart-G,
+IR-P1-003,REG-US-29CFR1926,1926.95 - Criteria for personal protective equipment,VERIFIED,HIGH,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.95,
+IR-P2-004,REG-US-29CFR1926,1926.651 - Specific excavation requirements,VERIFIED,HIGH,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.651,
+IR-P2-005,REG-US-29CFR1926,1926.200 - Accident prevention signs and tags,VERIFIED,MEDIUM,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.200,
+IR-P2-006,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-007,REG-US-29CFR1926,1926.652 - Requirements for protective systems,VERIFIED,HIGH,https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1926/subpart-P,
+IR-P3-008,REG-US-29CFR1926,1926.501 - Duty to have fall protection,VERIFIED,HIGH,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501,
+IR-P3-009,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-010,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-011,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-012,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-013,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-014,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-015,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-035,REG-US-29CFR1926,1926.501 - Duty to have fall protection,VERIFIED,HIGH,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501,
+IR-P4-016,REG-US-29CFR1926,Subpart T - Demolition,PROPOSED,MEDIUM,,
+IR-P4-017,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-018,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-019,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-020,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-021,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-022,REG-US-29CFR1926,Subpart T - Demolition,PROPOSED,MEDIUM,,
+IR-P4-023,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-024,REG-US-29CFR1926,Subpart R - Steel Erection,PROPOSED,MEDIUM,,
+IR-P4-025,REG-US-29CFR1926,Subpart CC - Cranes and Derricks in Construction,VERIFIED,MEDIUM,https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1926/subpart-CC,
+IR-P4-036,REG-US-29CFR1926,1926.250 - General requirements for storage,PROPOSED,MEDIUM,,
+IR-P4-037,REG-US-29CFR1926,Subpart CC - Cranes and Derricks in Construction,VERIFIED,HIGH,https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1926/subpart-CC,
+IR-P5-026,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P5-027,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P5-028,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-029,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-030,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-031,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-032,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-033,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-034,,,UNMAPPED,,,No binding authored yet. Contributions welcome.

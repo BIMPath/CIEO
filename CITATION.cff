@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+title: "CIEO — Construction Inspection Evidence Ontology"
+message: "If you use CIEO, please cite both the software and the accompanying publication."
+type: software
+abstract: >-
+  An ontology and reference implementation for evidence-aware construction inspection.
+  CIEO represents regulatory inspection requirements, the construction process they are
+  scoped to, the BIM and site geometry they target, the visual observations offered as
+  evidence, and the observation conditions under which that evidence was gathered, so that
+  a compliance decision can be withheld when the evidence was never capable of settling it.
+  Requirements are jurisdiction-neutral; the legal grounding is supplied by pluggable
+  jurisdiction profiles.
+authors:
+  - family-names: "Khosravi"
+    given-names: "M."
+repository-code: "https://github.com/BIMPath/cieo"
+url: "https://bimpath.github.io/cieo"
+license: CC-BY-4.0
+license-url: "https://creativecommons.org/licenses/by/4.0/"
+version: "1.0.0"
+date-released: "2026-10-14"
+keywords:
+  - construction inspection
+  - ontology
+  - OWL
+  - SHACL
+  - regulatory compliance
+  - building information modelling
+  - computer vision
+  - evidence sufficiency
+  - observability
+references:
+  - type: article
+    title: "Evidence-aware ontology-based construction inspection"
+    authors:
+      - family-names: "Khosravi"
+        given-names: "M."
+    notes: "Manuscript. Update this entry with the DOI on publication."

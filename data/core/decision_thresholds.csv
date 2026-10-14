@@ -1,0 +1,15 @@
+parameter_id,value,symbol,applies_to,description
+sufficiency_high,0.75,,sufficiency,At or above this aggregate detectability the evidence is Sufficient.
+sufficiency_low,0.4,,sufficiency,Below this the evidence is Insufficient; between the two it is Marginal.
+positive_confidence_high,0.85,,decision,"A detection above this settles the item on its own, without absence reasoning."
+positive_confidence_low,0.6,,decision,Below this a detection is not acted on.
+posterior_absence_high,0.9,,decision,Required posterior probability of true absence before a violation may be asserted.
+posterior_absence_low,0.6,,decision,Below this an absence claim is not entertained at all.
+required_coverage_default,0.95,,sufficiency,Default share of a target's extent that must be observed for spatial completeness.
+marginal_coverage,0.7,,sufficiency,Coverage below which a spatial-completeness item is not even marginal.
+prior_presence,0.8,pi,model,Prior probability that a required condition holds before any observation.
+viewpoint_correlation,0.3,rho,model,Discount applied to each additional viewpoint's independent contribution.
+evidence_half_life_days,3.0,,model,Half-life of evidence validity; older observations are down-weighted.
+b_resolution,0.9,b_res,detectability,Logit gain per doubling of pixels on target.
+b_occlusion,-4.0,b_occ,detectability,"Logit penalty, scaled by the class occlusion sensitivity and the occluded fraction."
+b_incidence,-2.0,b_inc,detectability,Logit penalty per unit of (1 - cos incidence).

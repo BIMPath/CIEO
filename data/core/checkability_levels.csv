@@ -1,0 +1,4 @@
+level_id,label,description
+AUTOMATIC,Automatic,"The system can settle the item without a person, when the evidence is sufficient."
+ASSISTED,Assisted,The system can propose a determination for a person to confirm.
+MANUAL,Manual,A person must settle it; the system records and routes it.

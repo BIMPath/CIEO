@@ -1,0 +1,11 @@
+stage_id,stage_label,typical_sequence,description,notes
+S-SITE-SETUP,Site establishment and temporary works,1,"Hoarding, access, temporary traffic management, welfare, site security.",The stage in which almost every delimitation and signage obligation first binds.
+S-ENABLING,Enabling works and service diversion,2,"Utility location and diversion, piling platforms, ground improvement.",Trenching obligations bind here before general earthworks begin.
+S-DEMOLITION,Demolition and dismantling,3,"Removal of existing structures, in whole or in part.",May run concurrently with other stages; sequence is nominal.
+S-EARTHWORKS,Earthworks and excavation,4,"Bulk excavation, support systems, dewatering, backfill.",Edge protection and excavation support obligations bind here.
+S-SUBSTRUCTURE,Foundations and substructure,5,"Piles, pile caps, footings, abutments, piers, retaining walls.",Most concealed-work hold points sit in this stage.
+S-SUPERSTRUCTURE,Superstructure erection,6,"Steel or concrete frame, girders, beams, bearings, connections.",Lifting-operation obligations bind here.
+S-DECK,Deck and slab construction,7,"Composite or in-situ slabs, shear connection, expansion joints.",Bridge- and building-floor specific.
+S-ENVELOPE,Envelope and waterproofing,8,"Waterproofing, cladding, roofing, drainage.",
+S-MEP,Services installation,9,"Mechanical, electrical and public-health installation, utility reinstatement.",
+S-FINISHES,"Finishes, furniture and handover",10,"Surfacing, restraint systems, parapets, signage, site restoration.",Site restoration and removal of temporary works close out here.

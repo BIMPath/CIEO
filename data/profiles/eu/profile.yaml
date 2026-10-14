@@ -1,0 +1,19 @@
+# CIEO jurisdiction profile
+profile_id: eu
+name: European Union
+jurisdiction: EU
+language: en
+status: complete            # complete | scaffold | draft
+cieo_version: "1.0"
+description: >
+  Harmonised standards, product standards and approval guidelines. Intended as a base layer beneath any CEN member state profile.
+builds_on: []
+maintainer: CIEO maintainers
+coverage:
+  requirements_total: 37
+  bindings_verified: 0
+  bindings_proposed: 12
+  unmapped: 25
+files:
+  regulations: regulations.csv
+  clause_bindings: clause_bindings.csv

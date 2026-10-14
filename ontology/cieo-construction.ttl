@@ -1,0 +1,262 @@
+@prefix cst:     <https://w3id.org/cieo/construction#> .
+@prefix cieo:    <https://w3id.org/cieo/core#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+
+<https://w3id.org/cieo/construction>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/cieo/construction/0.1.0> ;
+    dcterms:title "CIEO Construction — project, phase, zone and element module"@en ;
+    dcterms:description """Represents the construction process as a partially ordered sequence of phases,
+the spatial zones that exist during each phase, and the physical elements that are built. The
+purpose of this module is not to duplicate IFC but to carry the two things IFC does not: the
+temporal scoping of the site's configuration, and the transient zones (excavation perimeters,
+exclusion zones, traffic management areas) which are the actual targets of most safety
+requirements and which never appear in the design model."""@en ;
+    vann:preferredNamespacePrefix "cst" ;
+    vann:preferredNamespaceUri "https://w3id.org/cieo/construction#" ;
+    dcterms:created "2026-09-10"^^xsd:date ;
+    owl:imports <https://w3id.org/cieo/core> .
+
+##############################################################################
+# Project and process
+##############################################################################
+
+cst:ConstructionProject
+    a owl:Class ;
+    rdfs:subClassOf cieo:InspectionEntity ;
+    rdfs:label "construction project"@en .
+
+cst:ConstructionSite
+    a owl:Class ;
+    rdfs:subClassOf cieo:SpatialZone ;
+    rdfs:label "construction site"@en .
+
+cst:ConstructionPhase
+    a owl:Class ;
+    rdfs:subClassOf cieo:InspectionEntity , prov:Activity ;
+    rdfs:label "construction phase"@en ;
+    rdfs:comment """A stage of the works with its own site configuration and its own set of applicable
+inspection requirements. Phase membership is what makes a requirement active or dormant: edge
+protection around an excavation is a live obligation during the excavation phase and meaningless
+before it and after backfill. Modelling this explicitly is what separates process-time inspection
+from the design-time compliance checking that most automated compliance work addresses."""@en .
+
+cst:ConstructionActivity
+    a owl:Class ;
+    rdfs:subClassOf cieo:InspectionEntity , prov:Activity ;
+    rdfs:label "construction activity"@en .
+
+cst:ConcealingActivity
+    a owl:Class ;
+    rdfs:subClassOf cst:ConstructionActivity ;
+    rdfs:label "concealing activity"@en ;
+    rdfs:comment """An activity after which a previously inspectable condition becomes permanently
+unobservable — a concrete pour over reinforcement, backfill over a utility run, a wearing course
+over a waterproofing layer. Concealing activities are what give hold points their force: once the
+activity has occurred, no future evidence can raise the sufficiency of the concealed inspection."""@en .
+
+##############################################################################
+# Zones
+##############################################################################
+
+cst:WorkZone            a owl:Class ; rdfs:subClassOf cieo:SpatialZone ; rdfs:label "work zone"@en .
+cst:WorkZoneBoundary    a owl:Class ; rdfs:subClassOf cst:WorkZone ; rdfs:label "work zone boundary"@en .
+cst:HazardZone          a owl:Class ; rdfs:subClassOf cst:WorkZone ; rdfs:label "hazard zone"@en .
+cst:ExclusionZone       a owl:Class ; rdfs:subClassOf cst:HazardZone ; rdfs:label "exclusion zone"@en .
+cst:TrafficManagementZone a owl:Class ; rdfs:subClassOf cst:WorkZone ; rdfs:label "traffic management zone"@en .
+cst:PedestrianRoute     a owl:Class ; rdfs:subClassOf cst:WorkZone ; rdfs:label "pedestrian route"@en .
+cst:ExcavationBoundary  a owl:Class ; rdfs:subClassOf cst:HazardZone ; rdfs:label "excavation boundary"@en ;
+    rdfs:comment "The perimeter polyline of an open excavation; a linear target whose extent is its length in metres."@en .
+cst:ExcavationFace      a owl:Class ; rdfs:subClassOf cst:HazardZone ; rdfs:label "excavation face"@en .
+cst:UtilityTrench       a owl:Class ; rdfs:subClassOf cst:HazardZone ; rdfs:label "utility trench"@en .
+cst:DemolitionZone      a owl:Class ; rdfs:subClassOf cst:HazardZone ; rdfs:label "demolition zone"@en .
+cst:DemolitionExclusionZone a owl:Class ; rdfs:subClassOf cst:ExclusionZone ; rdfs:label "demolition exclusion zone"@en .
+cst:LiftingZone         a owl:Class ; rdfs:subClassOf cst:ExclusionZone ; rdfs:label "lifting zone"@en .
+cst:SiteArea            a owl:Class ; rdfs:subClassOf cst:WorkZone ; rdfs:label "site area"@en .
+
+##############################################################################
+# Physical things
+##############################################################################
+
+cst:ConstructionElement
+    a owl:Class ;
+    rdfs:subClassOf cieo:SpatialThing ;
+    rdfs:label "construction element"@en ;
+    rdfs:comment """A physical element of the permanent works. Instances are expected to carry a
+cst:ifcGlobalId and, where the IFC model has been loaded, a cst:correspondsToIfcEntity link. CIEO
+does not restate the IFC class hierarchy; the alignment module handles that."""@en .
+
+cst:SteelMember          a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "steel member"@en .
+cst:BoltedConnection     a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "bolted connection"@en ;
+    rdfs:comment "A connection assembly whose conformity depends on the presence of every component: bolt, nut and washer."@en .
+cst:WeldedJoint          a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "welded joint"@en .
+cst:ReinforcementAssembly a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "reinforcement assembly"@en .
+cst:ShearStudArray       a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "shear stud array"@en .
+cst:DeckSlab             a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "deck slab"@en .
+cst:ConcreteElement      a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "concrete element"@en ;
+    rdfs:comment "A cast in-situ concrete element, the target of curing and cover requirements."@en .
+cst:AbutmentElement      a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "abutment element"@en .
+cst:MicropileArray       a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "micropile array"@en .
+cst:BearingAssembly      a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "bearing assembly"@en .
+cst:ExpansionJoint       a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "expansion joint"@en .
+cst:RoadRestraintSystem  a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "road restraint system"@en ;
+    rdfs:comment "Guardrail or barrier system; a linear target whose extent is the length of alignment it must protect."@en .
+cst:PedestrianParapet    a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "pedestrian parapet"@en .
+cst:PavementSurface      a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "pavement surface"@en .
+cst:UtilityRun           a owl:Class ; rdfs:subClassOf cst:ConstructionElement ; rdfs:label "utility run"@en .
+
+cst:TemporaryStructure
+    a owl:Class ;
+    rdfs:subClassOf cieo:SpatialThing ;
+    rdfs:label "temporary structure"@en ;
+    rdfs:comment "Formwork, shoring, fencing, the temporary Bailey bridge. Required during some phases and required to be absent at completion."@en .
+
+cst:Formwork             a owl:Class ; rdfs:subClassOf cst:TemporaryStructure ; rdfs:label "formwork"@en .
+cst:TemporaryProtection  a owl:Class ; rdfs:subClassOf cst:TemporaryStructure ; rdfs:label "temporary protection"@en .
+
+cst:ConstructionEquipment a owl:Class ; rdfs:subClassOf cieo:SpatialThing ; rdfs:label "construction equipment"@en .
+cst:DrillingRig          a owl:Class ; rdfs:subClassOf cst:ConstructionEquipment ; rdfs:label "drilling rig"@en .
+cst:Crane                a owl:Class ; rdfs:subClassOf cst:ConstructionEquipment ; rdfs:label "crane"@en .
+
+cst:MaterialLot
+    a owl:Class ;
+    rdfs:subClassOf cieo:InspectionEntity ;
+    rdfs:label "material lot"@en ;
+    rdfs:comment "A delivered or produced batch whose conformity is established documentarily rather than visually."@en .
+
+cst:ConcreteBatch        a owl:Class ; rdfs:subClassOf cst:MaterialLot ; rdfs:label "concrete batch"@en .
+cst:SteelComponentLot    a owl:Class ; rdfs:subClassOf cst:MaterialLot ; rdfs:label "steel component lot"@en .
+cst:PavementMaterial     a owl:Class ; rdfs:subClassOf cst:MaterialLot ; rdfs:label "pavement material"@en .
+
+cst:Worker
+    a owl:Class ;
+    rdfs:subClassOf cieo:Agent , cieo:SpatialThing ;
+    rdfs:label "worker"@en .
+
+##############################################################################
+# Object properties
+##############################################################################
+
+cst:hasPhase
+    a owl:ObjectProperty ;
+    rdfs:domain cst:ConstructionProject ;
+    rdfs:range cst:ConstructionPhase ;
+    rdfs:label "has phase"@en .
+
+cst:hasActivity
+    a owl:ObjectProperty ;
+    rdfs:domain cst:ConstructionPhase ;
+    rdfs:range cst:ConstructionActivity ;
+    rdfs:label "has activity"@en .
+
+cst:phasePrecedes
+    a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:domain cst:ConstructionPhase ;
+    rdfs:range cst:ConstructionPhase ;
+    rdfs:label "phase precedes"@en .
+
+cst:belongsToPhase
+    a owl:ObjectProperty ;
+    rdfs:range cst:ConstructionPhase ;
+    rdfs:label "belongs to phase"@en ;
+    rdfs:comment "The phase during which this element is built or this zone exists."@en .
+
+cst:existsDuringPhase
+    a owl:ObjectProperty ;
+    rdfs:domain cieo:SpatialZone ;
+    rdfs:range cst:ConstructionPhase ;
+    rdfs:label "exists during phase"@en ;
+    rdfs:comment "A transient zone may exist across several phases; this is the property the requirement-activation rule reads."@en .
+
+cst:hasWorkZone
+    a owl:ObjectProperty ;
+    rdfs:domain cst:ConstructionSite ;
+    rdfs:range cst:WorkZone ;
+    rdfs:label "has work zone"@en .
+
+cst:containsElement
+    a owl:ObjectProperty ;
+    rdfs:domain cieo:SpatialZone ;
+    rdfs:range cst:ConstructionElement ;
+    rdfs:label "contains element"@en .
+
+cst:conceals
+    a owl:ObjectProperty ;
+    rdfs:domain cst:ConcealingActivity ;
+    rdfs:range cieo:SpatialThing ;
+    rdfs:label "conceals"@en ;
+    rdfs:comment "After this activity completes, the referenced thing can no longer be visually observed."@en .
+
+cst:correspondsToIfcEntity
+    a owl:ObjectProperty ;
+    rdfs:domain cst:ConstructionElement ;
+    rdfs:label "corresponds to IFC entity"@en ;
+    rdfs:comment "Range is deliberately unconstrained here; the ifcOWL alignment module narrows it."@en .
+
+##############################################################################
+# Datatype properties
+##############################################################################
+
+cst:phaseSequence
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain cst:ConstructionPhase ;
+    rdfs:range xsd:integer ;
+    rdfs:label "phase sequence"@en .
+
+cst:ifcGlobalId
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "IFC GlobalId"@en ;
+    rdfs:comment "The IFC GUID, retained as a literal so that the graph stays joinable to the model even when ifcOWL is not loaded."@en .
+
+cst:phaseStart
+    a owl:DatatypeProperty ;
+    rdfs:domain cst:ConstructionPhase ;
+    rdfs:range xsd:date ;
+    rdfs:label "phase start"@en .
+
+cst:phaseEnd
+    a owl:DatatypeProperty ;
+    rdfs:domain cst:ConstructionPhase ;
+    rdfs:range xsd:date ;
+    rdfs:label "phase end"@en .
+
+##############################################################################
+# Site-observed temporary works
+#
+# Added for conditions actually photographed during inspection rather than
+# derived from the design model. A ladder leaning on an abutment is not in any
+# BIM model, and is exactly the kind of thing an inspection has to settle.
+##############################################################################
+
+cst:LadderAccess a owl:Class ;
+    rdfs:subClassOf cst:TemporaryStructure ;
+    rdfs:label "Ladder access"@en ;
+    rdfs:comment "A portable or fixed ladder serving as the means of access between two working levels. Bearing a ladder is not the same as bearing a compliant access: securing, projection above the landing and fall protection are separate assertions."@en .
+
+cst:MaterialStorageArea a owl:Class ;
+    rdfs:subClassOf cst:SiteArea ;
+    rdfs:label "Material storage area"@en ;
+    rdfs:comment "A designated or ad hoc area in which construction materials are stacked. Location is not fixed for the duration of the works, so the target's geometry is phase-dependent."@en .
+
+cst:CraneSetup a owl:Class ;
+    rdfs:subClassOf cst:TemporaryStructure ;
+    rdfs:label "Crane set-up"@en ;
+    rdfs:comment "The stationed configuration of a mobile crane: chassis position, outrigger extension and the spreader pads that transfer the reaction to the ground."@en .
+
+cst:Dunnage a owl:Class ;
+    rdfs:subClassOf cst:TemporaryStructure ;
+    rdfs:label "Dunnage"@en ;
+    rdfs:comment "Timber or composite packing placed under stored material to hold it clear of the ground and of standing water."@en .
+
+cst:OutriggerPad a owl:Class ;
+    rdfs:subClassOf cst:TemporaryStructure ;
+    rdfs:label "Outrigger pad"@en ;
+    rdfs:comment "Spreader plate under a crane outrigger foot, sized from the ground bearing capacity."@en .

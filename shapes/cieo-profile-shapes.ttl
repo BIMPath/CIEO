@@ -1,0 +1,134 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix prof:    <https://w3id.org/cieo/profile#> .
+@prefix insp:    <https://w3id.org/cieo/inspection#> .
+@prefix reg:     <https://w3id.org/cieo/regulation#> .
+@prefix cmp:     <https://w3id.org/cieo/compliance#> .
+@prefix shape:   <https://w3id.org/cieo/shapes#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://w3id.org/cieo/profile-shapes>
+    a owl:Ontology ;
+    dcterms:title "CIEO SHACL shapes — jurisdiction profiles and clause bindings"@en ;
+    dcterms:description """Constraints on the portability layer.
+
+The constraints here exist for one reason: a compliance finding that cites a clause is worth
+exactly as much as the binding behind it, and a binding nobody checked is not evidence of
+anything. So the shapes refuse the two ways that distinction gets lost in practice — a binding
+asserted as verified with nothing recorded to verify it against, and a settled decision citing a
+clause that was only ever a guess."""@en ;
+    owl:imports <https://w3id.org/cieo/profile> .
+
+##############################################################################
+# Clause bindings
+##############################################################################
+
+shape:ClauseBindingShape
+    a sh:NodeShape ;
+    sh:targetClass prof:ClauseBinding ;
+    sh:property [
+        sh:path prof:bindsRequirement ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "A clause binding must name exactly one inspection requirement." ] ;
+    sh:property [
+        sh:path prof:hasBindingStatus ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class prof:BindingStatus ;
+        sh:message "Every binding must declare how far it has been checked. A binding with no status is indistinguishable from an unchecked guess, which is the thing this layer exists to prevent." ] .
+
+shape:VerifiedBindingShape
+    a sh:NodeShape ;
+    sh:targetClass prof:ClauseBinding ;
+    sh:severity sh:Violation ;
+    sh:message "A binding asserted as Verified must record both the clause it binds to and the source where that clause was read. Verification that cannot itself be checked is an assertion, not a verification." ;
+    sh:or (
+        [ sh:not [ sh:property [ sh:path prof:hasBindingStatus ;
+                                 sh:hasValue prof:Verified ; sh:minCount 1 ] ] ]
+        [ sh:property [ sh:path prof:bindsToClause ; sh:minCount 1 ] ;
+          sh:property [ sh:path prof:sourceUrl ; sh:minCount 1 ] ]
+    ) .
+
+shape:UnmappedBindingShape
+    a sh:NodeShape ;
+    sh:targetClass prof:ClauseBinding ;
+    sh:severity sh:Violation ;
+    sh:message "A binding marked Unmapped or NotApplicable must not also name a clause. If a clause is known, the binding is Proposed at least." ;
+    sh:or (
+        [ sh:not [ sh:property [ sh:path prof:hasBindingStatus ;
+                                 sh:in ( prof:Unmapped prof:NotApplicable ) ;
+                                 sh:minCount 1 ] ] ]
+        [ sh:property [ sh:path prof:bindsToClause ; sh:maxCount 0 ] ]
+    ) .
+
+##############################################################################
+# Profiles
+##############################################################################
+
+shape:JurisdictionProfileShape
+    a sh:NodeShape ;
+    sh:targetClass prof:JurisdictionProfile ;
+    sh:property [
+        sh:path prof:profileId ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:pattern "^[a-z][a-z0-9-]*$" ;
+        sh:message "A profile needs one lower-case identifier, matching its folder name under data/profiles/." ] ;
+    sh:property [
+        sh:path prof:forJurisdiction ;
+        sh:minCount 1 ;
+        sh:message "A profile must name the jurisdiction whose law it carries." ] ;
+    sh:property [
+        sh:path prof:profileStatus ;
+        sh:in ( "draft" "scaffold" "complete" ) ;
+        sh:maxCount 1 ;
+        sh:message "Profile status must be draft, scaffold or complete, so that a reader can tell a finished mapping from a sketch." ] .
+
+shape:ProfileCycleShape
+    a sh:NodeShape ;
+    sh:targetClass prof:JurisdictionProfile ;
+    sh:property [
+        sh:path [ sh:oneOrMorePath prof:buildsOn ] ;
+        sh:disjoint prof:profileId ;
+        sh:severity sh:Warning ;
+        sh:message "A profile appears in its own builds-on chain. Resolution would not terminate." ] .
+
+##############################################################################
+# The tie back to the decision
+##############################################################################
+
+shape:SettledDecisionBindingShape
+    a sh:NodeShape ;
+    sh:targetClass cmp:InspectionDecision ;
+    sh:severity sh:Warning ;
+    sh:message "A settled decision rests on a clause binding that is only Proposed. The determination may be sound, but it should not be presented to a regulator until the binding is verified against the published instrument." ;
+    sh:sparql [
+        sh:message "Settled decision citing a clause whose binding is not Verified." ;
+        sh:prefixes <https://w3id.org/cieo/profile-shapes> ;
+        sh:select """
+            PREFIX cmp:  <https://w3id.org/cieo/compliance#>
+            PREFIX prof: <https://w3id.org/cieo/profile#>
+            PREFIX insp: <https://w3id.org/cieo/inspection#>
+            SELECT $this
+            WHERE {
+                $this cmp:hasState ?state .
+                FILTER (?state IN (cmp:Compliant, cmp:NonCompliant))
+                $this cmp:decidesItem/insp:appliesRequirement ?req .
+                ?req prof:hasBinding ?b .
+                ?b prof:hasBindingStatus ?st .
+                FILTER (?st != prof:Verified)
+            }
+        """ ] .
+
+##############################################################################
+# Scoping
+##############################################################################
+
+shape:RequirementStageShape
+    a sh:NodeShape ;
+    sh:targetClass insp:InspectionRequirement ;
+    sh:property [
+        sh:path prof:appliesToStage ;
+        sh:minCount 1 ;
+        sh:class prof:WorkStage ;
+        sh:message "Every requirement must bind to at least one generic work stage. Without it the requirement is either always live or never live, and both are wrong." ] .

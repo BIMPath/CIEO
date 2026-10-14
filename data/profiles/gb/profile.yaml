@@ -1,0 +1,19 @@
+# CIEO jurisdiction profile
+profile_id: gb
+name: United Kingdom (Great Britain)
+jurisdiction: GB
+language: en
+status: scaffold            # complete | scaffold | draft
+cieo_version: "1.0"
+description: >
+  CDM 2015 Part 4 plus the principal safety instruments. CDM bindings verified against legislation.gov.uk; the rest proposed.
+builds_on: ["eu"]
+maintainer: unclaimed - see CONTRIBUTING.md
+coverage:
+  requirements_total: 37
+  bindings_verified: 10
+  bindings_proposed: 4
+  unmapped: 23
+files:
+  regulations: regulations.csv
+  clause_bindings: clause_bindings.csv

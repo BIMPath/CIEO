@@ -1,0 +1,38 @@
+requirement_id,regulation_id,clause_reference,binding_status,confidence,source_url,note
+IR-P1-001,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P1-002,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P1-003,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P2-004,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P2-005,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P2-006,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-007,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-008,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-009,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-010,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-011,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-012,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-013,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-014,REG-UNI-EN-12350-1,Sampling,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P3-015,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P3-035,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-016,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-017,REG-UNI-EN-1090-1,Conformity assessment,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-018,REG-UNI-EN-ISO-4063,Process nomenclature,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-019,REG-EN-ISO-16228,Inspection documents,PROPOSED,MEDIUM,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-020,REG-EN-10025,EN 10025-1 to -6 and related,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-021,REG-EN-10025-2,EN 10025-2 and related,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-022,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-023,REG-UNI-EN-1337,Structural bearings,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-024,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-025,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P4-036,REG-UNI-EN-1090-2,Clause 6.3 (handling and storage); D.Lgs. 81/2008 Allegato XVIII punto 2,PROPOSED,MEDIUM,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P4-037,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P5-026,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P5-027,REG-ETAG-032,ETA approval,PROPOSED,MEDIUM,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P5-028,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-029,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-030,REG-EN-14695-2010,Reinforced bitumen sheets,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P6-031,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."
+IR-P6-032,REG-UNI-EN-1317,Road restraint systems,PROPOSED,HIGH,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P6-033,REG-UNI-EN-1317,Road restraint systems,PROPOSED,MEDIUM,,No free citable text on record for this instrument; verify against your own copy and set status to VERIFIED.
+IR-P6-034,,,UNMAPPED,,,"Not grounded in this jurisdiction's instruments. If that is correct rather than merely unwritten, set NOT_APPLICABLE."

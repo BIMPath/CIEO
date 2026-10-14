@@ -1,0 +1,12 @@
+regulation_id,short_name,full_title,jurisdiction,instrument_type,domain,in_force_from,source_url,notes
+REG-CDS-285-1992,Codice della Strada,Decreto Legislativo 30 aprile 1992 n. 285 - Nuovo codice della strada,IT,LegislativeDecree,RoadTraffic,,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-04-30;285,
+REG-CIRC-NTC-2018,Circolare NTC 2018,Circolare 21 gennaio 2019 n. 7 C.S.LL.PP. - Istruzioni per l'applicazione delle NTC 2018,IT,Circular,StructuralDesign,,https://www.gazzettaufficiale.it/eli/id/2019/02/11/19A00855/sg,
+REG-DLGS-81-2008,D.Lgs. 81/2008,Decreto Legislativo 9 aprile 2008 n. 81 - Testo unico sulla salute e sicurezza sul lavoro,IT,LegislativeDecree,OccupationalSafety,,https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2008-04-09;81,
+REG-DM-09-01-1996,D.M. 09/01/1996,Decreto Ministeriale 9 gennaio 1996 - Norme tecniche per il calcolo e collaudo delle strutture in c.a. e c.a.p.,IT,MinisterialDecree,StructuralExecution,,,
+REG-DM-10-07-2002,D.M. 10/07/2002,Decreto Ministeriale 10 luglio 2002 - Disciplinare tecnico relativo agli schemi segnaletici per il segnalamento temporaneo,IT,MinisterialDecree,RoadTraffic,,,
+REG-DM-49-2018,D.M. 49/2018,Linee guida allegate al D.M. 7 marzo 2018 n. 49 - Direzione dei lavori e collaudo,IT,MinisterialDecree,WorksSupervision,,,
+REG-NTC-2018,NTC 2018,Norme Tecniche per le Costruzioni - D.M. 17 gennaio 2018,IT,MinisterialDecree,StructuralDesign,,https://www.gazzettaufficiale.it/eli/id/2018/2/20/18A00716/sg,
+REG-UNI-7122-72,UNI 7122-72,UNI 7122-72 - Concrete - Sampling of fresh concrete,IT,NationalStandard,ConcreteMaterial,,,
+REG-UNI-7163-72,UNI 7163-72,UNI 7163-72 - Concrete - Conformity control requirements,IT,NationalStandard,ConcreteMaterial,,,
+REG-UNI-7466-75,UNI 7466-1/2/3-75,UNI 7466 parts 1 to 3 - Aggregates for concrete - Size and grading,IT,NationalStandard,ConcreteMaterial,,,
+REG-UNI-9558,UNI 9558,UNI 9558 - Formwork and concrete curing procedures,IT,NationalStandard,ConcreteExecution,,,

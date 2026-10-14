@@ -1,0 +1,19 @@
+# CIEO jurisdiction profile - copy this file into data/profiles/<id>/
+profile_id: xx
+name: Country or body name
+jurisdiction: XX
+language: en
+status: draft                 # draft | scaffold | complete
+cieo_version: "1.0"
+description: >
+  What this profile covers, and what it deliberately does not.
+builds_on: []                 # e.g. ["eu"] for a CEN member state
+maintainer: your name or organisation
+coverage:
+  requirements_total: 0
+  bindings_verified: 0
+  bindings_proposed: 0
+  unmapped: 0
+files:
+  regulations: regulations.csv
+  clause_bindings: clause_bindings.csv

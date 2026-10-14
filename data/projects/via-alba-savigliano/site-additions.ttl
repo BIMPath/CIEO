@@ -1,0 +1,43 @@
+@prefix sav:  <https://w3id.org/cieo/savigliano#> .
+@prefix kb:   <https://w3id.org/cieo/kb#> .
+@prefix cieo: <https://w3id.org/cieo/core#> .
+@prefix cst:  <https://w3id.org/cieo/construction#> .
+@prefix insp: <https://w3id.org/cieo/inspection#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# Three inspection targets added from the 2026 site inspection. Unlike the
+# synthetic individuals above, these correspond to conditions actually observed
+# and photographed on the Via Alba site, and each is modelled in Unity
+# (ladder1.FBX, steel-beam-depot.fbx + wooden_pallet.obj, crane outrigger pads).
+#
+# Extents below are the values to draw or count on the Unity marker. Keep them
+# in step with the polyline you author: visibility_to_rdf.py writes a second
+# hasSpatialExtent from the measured geometry and the SHACL shape only checks
+# that an extent exists, so two disagreeing values pass silently.
+# ---------------------------------------------------------------------------
+
+sav:LadderAccess_AbutmentLeft a cst:LadderAccess, insp:InspectionTarget ;
+    rdfs:label "LadderAccess_AbutmentLeft"@en ;
+    rdfs:comment "Portable ladder placed against the exposed left-abutment excavation face."@en ;
+    cieo:hasSpatialExtent 1.0 ;
+    cieo:extentUnit "count" ;
+    cst:existsDuringPhase kb:P3 ;
+    cst:belongsToPhase kb:P3 .
+
+sav:MaterialStorage_SteelDepot a cst:MaterialStorageArea, insp:InspectionTarget ;
+    rdfs:label "MaterialStorage_SteelDepot"@en ;
+    rdfs:comment "Open-air stockpile of corten deck girders on timber dunnage."@en ;
+    cieo:hasSpatialExtent 96.0 ;
+    cieo:extentUnit "m2" ;
+    cst:existsDuringPhase kb:P4 ;
+    cst:belongsToPhase kb:P4 .
+
+sav:CraneSetup_ViaAlba a cst:CraneSetup, insp:InspectionTarget ;
+    rdfs:label "CraneSetup_ViaAlba"@en ;
+    rdfs:comment "Telescopic mobile crane stationed on the existing Via Alba carriageway for deck erection; four outriggers on steel spreader plates."@en ;
+    cieo:hasSpatialExtent 4.0 ;
+    cieo:extentUnit "count" ;
+    cst:existsDuringPhase kb:P4 ;
+    cst:belongsToPhase kb:P4 .

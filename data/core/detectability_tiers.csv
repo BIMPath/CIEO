@@ -1,0 +1,5 @@
+tier_id,label,description
+COARSE,Coarse,Resolved at any working standoff; 16-20 px on target typical.
+MEDIUM,Medium,Needs a deliberate approach; 24 px on target typical.
+FINE,Fine,Needs close range; 32 px on target typical.
+NON_VISUAL,Non-visual,Not settleable by imagery at any range.

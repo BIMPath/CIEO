@@ -1,0 +1,19 @@
+# CIEO jurisdiction profile
+profile_id: us
+name: United States (federal)
+jurisdiction: US
+language: en
+status: scaffold            # complete | scaffold | draft
+cieo_version: "1.0"
+description: >
+  29 CFR Part 1926. Subparts E, G, M, P and CC verified; the rest proposed or unmapped. State-plan states may be stricter.
+builds_on: []
+maintainer: unclaimed - see CONTRIBUTING.md
+coverage:
+  requirements_total: 37
+  bindings_verified: 10
+  bindings_proposed: 4
+  unmapped: 23
+files:
+  regulations: regulations.csv
+  clause_bindings: clause_bindings.csv

@@ -1,0 +1,23 @@
+# CIEO project descriptor
+project_id: via-alba-savigliano
+name: Via Alba bridge replacement, Savigliano (CN), Italy
+asset_type: RoadBridge
+country: IT
+profiles: [it, eu]          # resolved left to right; project bindings override both
+cieo_version: "1.0"
+description: >
+  Replacement of the road bridge carrying Via Alba over the Mellea stream. A composite
+  steel-concrete structure replacing a masonry arch. This is the case study of the
+  reference publication, and the worked example for the whole framework.
+capture:
+  photographs: 354
+  image_width_px: 4032
+  image_height_px: 3024
+  horizontal_fov_deg: 67
+  captured: 2026-04
+files:
+  phases: phases.csv
+  site_abox: site.ttl
+  site_additions: site-additions.ttl
+  project_regulations: regulations.csv
+  project_bindings: clause_bindings.csv

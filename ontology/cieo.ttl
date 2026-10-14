@@ -1,0 +1,47 @@
+@prefix cieoall: <https://w3id.org/cieo#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+
+<https://w3id.org/cieo>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/cieo/0.1.0> ;
+    dcterms:title "CIEO — Construction Inspection Evidence Ontology"@en ;
+    dcterms:description """An evidence-aware ontology for construction inspection.
+
+CIEO represents regulatory inspection requirements, the construction process they are scoped to,
+the BIM and site geometry they target, the visual observations offered as evidence, and — its
+distinguishing element — the observation conditions under which that evidence was gathered, so
+that a decision can be withheld when the evidence was never capable of settling the question.
+
+The seven modules may be imported independently. This file imports all of them plus the ifcOWL
+alignment, and is the entry point for a full reasoning run.
+
+Module map:
+  core          shared upper terms, datatypes, the PROV spine
+  construction  project, phases, transient site zones, physical elements
+  regulation    sources, clauses, normative requirements, temporal validity of law
+  inspection    requirements, targets, items, and the evidence-pattern typology
+  observation   viewpoints, detections, explicit non-detections, spatial grounding
+  evidence      observation conditions, calibrated detectability, evidence sufficiency
+  compliance    inspection states, decisions, human verification, traceability
+  profile       jurisdiction profiles, clause bindings, asset types, work stages
+
+Load order matters only for tools without owl:imports resolution; the dependency graph is
+core <- construction <- regulation <- inspection <- observation <- evidence <- compliance,
+with profile depending on core, regulation and inspection."""@en ;
+    vann:preferredNamespacePrefix "cieo" ;
+    dcterms:created "2026-09-10"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:imports <https://w3id.org/cieo/core> ,
+                <https://w3id.org/cieo/construction> ,
+                <https://w3id.org/cieo/regulation> ,
+                <https://w3id.org/cieo/inspection> ,
+                <https://w3id.org/cieo/observation> ,
+                <https://w3id.org/cieo/evidence> ,
+                <https://w3id.org/cieo/compliance> ,
+                <https://w3id.org/cieo/profile> ,
+                <https://w3id.org/cieo/ifc-alignment> .

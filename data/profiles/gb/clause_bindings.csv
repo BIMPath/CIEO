@@ -1,0 +1,38 @@
+requirement_id,regulation_id,clause_reference,binding_status,confidence,source_url,note
+IR-P1-001,REG-GB-CDM-2015,Regulation 27 - Traffic routes,VERIFIED,HIGH,,
+IR-P1-002,REG-GB-CDM-2015,Regulation 18 - Good order and site security,VERIFIED,MEDIUM,,
+IR-P1-003,REG-GB-PPE-1992,Regulation 4 - Provision of personal protective equipment,PROPOSED,MEDIUM,,
+IR-P2-004,REG-GB-CDM-2015,Regulation 22 - Excavations,VERIFIED,HIGH,,
+IR-P2-005,REG-GB-CDM-2015,Regulation 18 - Good order and site security,VERIFIED,MEDIUM,,
+IR-P2-006,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-007,REG-GB-CDM-2015,Regulation 22 - Excavations,VERIFIED,HIGH,,
+IR-P3-008,REG-GB-CDM-2015,Regulation 22 - Excavations,VERIFIED,HIGH,,
+IR-P3-009,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-010,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-011,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-012,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-013,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-014,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-015,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P3-035,REG-GB-WAHR-2005,Regulation 6 - Avoidance of risks from work at height,PROPOSED,MEDIUM,,
+IR-P4-016,REG-GB-CDM-2015,Regulation 20 - Demolition or dismantling,VERIFIED,HIGH,,
+IR-P4-017,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-018,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-019,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-020,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-021,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-022,REG-GB-CDM-2015,Regulation 20 - Demolition or dismantling,VERIFIED,HIGH,,
+IR-P4-023,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-024,REG-GB-CDM-2015,Regulation 19 - Stability of structures,VERIFIED,HIGH,,
+IR-P4-025,REG-GB-LOLER-1998,Regulation 8 - Organisation of lifting operations,PROPOSED,MEDIUM,,
+IR-P4-036,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P4-037,REG-GB-LOLER-1998,Regulation 8 - Organisation of lifting operations,PROPOSED,MEDIUM,,
+IR-P5-026,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P5-027,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P5-028,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-029,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-030,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-031,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-032,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-033,,,UNMAPPED,,,No binding authored yet. Contributions welcome.
+IR-P6-034,REG-GB-CDM-2015,Regulation 18 - Good order and site security,VERIFIED,MEDIUM,,

@@ -1,0 +1,65 @@
+{
+  "cieo_version": "1.0",
+  "tables": [
+    {
+      "table": "core/requirements.csv",
+      "schema": "schemas/core-requirements.json",
+      "description": "What must be true on a construction site, independent of any legal system. The heart of the catalogue, and the file most contributors will extend."
+    },
+    {
+      "table": "core/object_classes.csv",
+      "schema": "schemas/core-object_classes.json",
+      "description": "Everything the detector can be asked to look for, with the five physical parameters that decide whether it could have been seen."
+    },
+    {
+      "table": "core/work_stages.csv",
+      "schema": "schemas/core-work_stages.json",
+      "description": "Generic stages of construction. Requirements bind to these; projects map their own phases onto them."
+    },
+    {
+      "table": "core/asset_types.csv",
+      "schema": "schemas/core-asset_types.json",
+      "description": "Kinds of works a requirement may be scoped to."
+    },
+    {
+      "table": "core/jurisdictions.csv",
+      "schema": "schemas/core-jurisdictions.json",
+      "description": "The legal systems for which a profile exists or is planned."
+    },
+    {
+      "table": "core/evidence_patterns.csv",
+      "schema": "schemas/core-evidence_patterns.json",
+      "description": "The seven ways a requirement can be settled, and what silence means under each."
+    },
+    {
+      "table": "core/checkability_levels.csv",
+      "schema": "schemas/core-checkability_levels.json",
+      "description": "How much of a requirement the machine may settle alone."
+    },
+    {
+      "table": "core/detectability_tiers.csv",
+      "schema": "schemas/core-detectability_tiers.json",
+      "description": "Shorthand for the pixel demand an object class implies."
+    },
+    {
+      "table": "core/decision_thresholds.csv",
+      "schema": "schemas/core-decision_thresholds.json",
+      "description": "Every constant the reasoner is tuned with, in one file rather than in code."
+    },
+    {
+      "table": "profile/regulations.csv",
+      "schema": "schemas/profile-regulations.json",
+      "description": "The instruments a profile draws on. One row per law, decree or standard."
+    },
+    {
+      "table": "profile/clause_bindings.csv",
+      "schema": "schemas/profile-clause_bindings.json",
+      "description": "The claim that this jurisdiction grounds this requirement in this clause. The file that makes CIEO portable."
+    },
+    {
+      "table": "project/phases.csv",
+      "schema": "schemas/project-phases.json",
+      "description": "This project's actual programme, each phase declaring which generic stages it realises."
+    }
+  ]
+}

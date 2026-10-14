@@ -1,0 +1,227 @@
+@prefix prof:    <https://w3id.org/cieo/profile#> .
+@prefix cieo:    <https://w3id.org/cieo/core#> .
+@prefix reg:     <https://w3id.org/cieo/regulation#> .
+@prefix insp:    <https://w3id.org/cieo/inspection#> .
+@prefix cst:     <https://w3id.org/cieo/construction#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/cieo/profile>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/cieo/profile/1.0.0> ;
+    dcterms:title "CIEO Profile — jurisdiction profiles and clause bindings"@en ;
+    dcterms:description """The module that makes CIEO portable between legal systems.
+
+Until this module, an inspection requirement carried its clause directly: the obligation and its
+legal grounding were one object, and moving the catalogue to another country meant rewriting it.
+That is wrong on the facts. "Workers shall wear head protection" is the same obligation in Turin,
+Manchester and Denver; what differs is which instrument says so, and where.
+
+So the requirement is now jurisdiction-neutral and carries no clause at all. A separate
+prof:ClauseBinding ties one requirement to one clause of one instrument, inside one
+prof:JurisdictionProfile, and records how sure anyone is that the binding is right. A requirement
+may have many bindings, or none; a jurisdiction with no binding for a requirement is making a
+visible statement, not a silent one, which is the same discipline the rest of CIEO applies to
+unobserved evidence.
+
+Profiles compose. A project names an ordered list of them, and a binding found earlier in the list
+wins: a contract specification overrides national law, which overrides a supranational standard,
+because that is the order in which obligations actually bite on a site.
+
+Three states a binding can be in, and the difference matters when the output is cited in a
+regulatory context:
+  prof:Verified   someone checked the clause against the published instrument and recorded where
+  prof:Proposed   the mapping is plausible and unchecked
+  prof:Unmapped   nobody has authored it; stated explicitly so the gap can be counted"""@en ;
+    vann:preferredNamespacePrefix "prof" ;
+    vann:preferredNamespaceUri "https://w3id.org/cieo/profile#" ;
+    dcterms:created "2026-10-14"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:imports <https://w3id.org/cieo/core> ,
+                <https://w3id.org/cieo/regulation> ,
+                <https://w3id.org/cieo/inspection> .
+
+##############################################################################
+# Classes
+##############################################################################
+
+prof:JurisdictionProfile a owl:Class ;
+    rdfs:subClassOf cieo:InspectionEntity ;
+    rdfs:label "Jurisdiction profile"@en ;
+    rdfs:comment """A named, versioned set of clause bindings for one legal system, together with
+the instruments those clauses belong to. The unit of reuse and the unit of contribution: a profile
+is what somebody in a new country writes, and nothing else in CIEO has to change when they do."""@en .
+
+prof:ClauseBinding a owl:Class ;
+    rdfs:subClassOf cieo:Assertion ;
+    rdfs:label "Clause binding"@en ;
+    rdfs:comment """The claim that a given jurisdiction grounds a given inspection requirement in a
+given clause. Reified rather than expressed as a direct property, because the claim itself carries
+provenance: who asserted it, against which published text, with what confidence, and on what date.
+A compliance finding that cites a clause is only as good as the binding behind it."""@en .
+
+prof:BindingStatus a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Binding status"@en ;
+    rdfs:comment "How far a clause binding has been checked."@en .
+
+prof:AssetType a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Asset type"@en ;
+    rdfs:comment """The kind of thing being built: a road bridge, a building, a tunnel. Requirements
+are scoped to asset types so that a catalogue can hold obligations for more than one kind of works
+without a tunnel project evaluating a deck-waterproofing item."""@en .
+
+prof:WorkStage a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Work stage"@en ;
+    rdfs:comment """A generic stage of construction — earthworks, substructure, superstructure —
+independent of any one project's phase breakdown. Requirements bind to stages; a project maps its
+own phases onto them. Without this indirection a requirement catalogue is tied to the programme of
+the project it was written for, which is what made the original catalogue unusable elsewhere."""@en .
+
+prof:ProjectDescriptor a owl:Class ;
+    rdfs:subClassOf cieo:InspectionEntity ;
+    rdfs:label "Project descriptor"@en ;
+    rdfs:comment """The project-level configuration: which asset type, which profiles in which
+order, which phases, and which site A-Box."""@en .
+
+##############################################################################
+# Binding status individuals
+##############################################################################
+
+prof:Verified a owl:NamedIndividual , prof:BindingStatus ;
+    rdfs:label "Verified"@en ;
+    rdfs:comment """Checked against the published instrument, with the source recorded. Only
+verified bindings should be relied on where a finding will be cited in a regulatory context."""@en .
+
+prof:Proposed a owl:NamedIndividual , prof:BindingStatus ;
+    rdfs:label "Proposed"@en ;
+    rdfs:comment "Plausible and not yet checked. Usable for analysis, not for citation."@en .
+
+prof:Unmapped a owl:NamedIndividual , prof:BindingStatus ;
+    rdfs:label "Unmapped"@en ;
+    rdfs:comment """No binding has been authored. Recorded explicitly rather than left absent, so
+that profile coverage is a number instead of an impression."""@en .
+
+prof:NotApplicable a owl:NamedIndividual , prof:BindingStatus ;
+    rdfs:label "Not applicable"@en ;
+    rdfs:comment """This jurisdiction imposes no equivalent obligation, and somebody has checked
+that it does not. Different from unmapped, and the difference is worth recording."""@en .
+
+##############################################################################
+# Object properties
+##############################################################################
+
+prof:hasBinding a owl:ObjectProperty ;
+    rdfs:domain prof:JurisdictionProfile ;
+    rdfs:range prof:ClauseBinding ;
+    rdfs:label "has binding"@en .
+
+prof:bindsRequirement a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range insp:InspectionRequirement ;
+    rdfs:label "binds requirement"@en .
+
+prof:bindsToClause a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range reg:RegulatoryClause ;
+    rdfs:label "binds to clause"@en .
+
+prof:hasBindingStatus a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range prof:BindingStatus ;
+    rdfs:label "has binding status"@en .
+
+prof:forJurisdiction a owl:ObjectProperty ;
+    rdfs:domain prof:JurisdictionProfile ;
+    rdfs:range reg:Jurisdiction ;
+    rdfs:label "for jurisdiction"@en .
+
+prof:buildsOn a owl:ObjectProperty ;
+    rdfs:domain prof:JurisdictionProfile ;
+    rdfs:range prof:JurisdictionProfile ;
+    rdfs:label "builds on"@en ;
+    rdfs:comment """A profile that supplies bindings this one does not override. A CEN member state
+builds on the EU profile; a contract specification builds on the national one."""@en .
+
+prof:appliesToAssetType a owl:ObjectProperty ;
+    rdfs:domain insp:InspectionRequirement ;
+    rdfs:range prof:AssetType ;
+    rdfs:label "applies to asset type"@en ;
+    rdfs:comment "Absent means the requirement applies to every asset type."@en .
+
+prof:appliesToStage a owl:ObjectProperty ;
+    rdfs:domain insp:InspectionRequirement ;
+    rdfs:range prof:WorkStage ;
+    rdfs:label "applies to stage"@en ;
+    rdfs:comment """Replaces the direct link from a requirement to a named project phase. The
+project's own phase declares which generic stages it realises, and applicability follows."""@en .
+
+prof:realisesStage a owl:ObjectProperty ;
+    rdfs:domain cst:ConstructionPhase ;
+    rdfs:range prof:WorkStage ;
+    rdfs:label "realises stage"@en .
+
+prof:usesProfile a owl:ObjectProperty ;
+    rdfs:domain prof:ProjectDescriptor ;
+    rdfs:range prof:JurisdictionProfile ;
+    rdfs:label "uses profile"@en .
+
+prof:hasAssetType a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain prof:ProjectDescriptor ;
+    rdfs:range prof:AssetType ;
+    rdfs:label "has asset type"@en .
+
+##############################################################################
+# Datatype properties
+##############################################################################
+
+prof:profileId a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain prof:JurisdictionProfile ;
+    rdfs:range xsd:string ;
+    rdfs:label "profile id"@en .
+
+prof:profileVersion a owl:DatatypeProperty ;
+    rdfs:domain prof:JurisdictionProfile ;
+    rdfs:range xsd:string ;
+    rdfs:label "profile version"@en .
+
+prof:profileStatus a owl:DatatypeProperty ;
+    rdfs:domain prof:JurisdictionProfile ;
+    rdfs:range xsd:string ;
+    rdfs:label "profile status"@en ;
+    rdfs:comment "One of: draft, scaffold, complete."@en .
+
+prof:precedence a owl:DatatypeProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range xsd:integer ;
+    rdfs:label "precedence"@en ;
+    rdfs:comment """Resolution order within a project. Lower wins. Assigned from the position of
+the profile in the project's list, with project-level bindings at 0."""@en .
+
+prof:sourceUrl a owl:DatatypeProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "source url"@en ;
+    rdfs:comment "Where the clause text was read. Required for a verified binding."@en .
+
+prof:verifiedOn a owl:DatatypeProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range xsd:date ;
+    rdfs:label "verified on"@en .
+
+prof:verifiedBy a owl:DatatypeProperty ;
+    rdfs:domain prof:ClauseBinding ;
+    rdfs:range xsd:string ;
+    rdfs:label "verified by"@en .
+
+prof:stageSequence a owl:DatatypeProperty ;
+    rdfs:domain prof:WorkStage ;
+    rdfs:range xsd:integer ;
+    rdfs:label "stage sequence"@en .

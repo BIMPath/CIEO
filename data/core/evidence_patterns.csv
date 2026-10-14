@@ -1,0 +1,8 @@
+pattern_id,label,requirement_assertion,non_detection_meaning,settleable_by_imagery
+PresenceOfRequired,Presence of required object,A required object is present within the target.,Non-detection may indicate absence or lack of observability; the two are separated by the detectability calculation.,yes
+SpatialCompleteness,Spatial completeness,A required condition holds over the full extent of the target.,Non-detection says nothing about the unobserved portion; coverage fixes how much of the target was observable.,yes
+ComponentIntegrity,Component integrity,All required components of an assembly are present and correctly configured.,"Sufficiency is limited by the least observable component, not by their combination.",yes
+VerifiedAbsence,Verified absence,A prohibited object or condition is absent.,Non-detection is evidence of absence only in proportion to the probability that the object would have been detected had it been present.,yes
+GeometricConformance,Geometric conformance,A measured geometric relationship conforms to the approved design.,Not settleable by object detection; requires measurement of the as-built against the model.,no
+DocumentaryConformance,Documentary conformance,"A required certificate, declaration or approval exists and is valid.",Not settleable from site imagery; requires documentary verification.,no
+MaterialTestConformance,Material-test conformance,A laboratory or in-situ test result satisfies the specified limit.,Not settleable from site imagery; requires the corresponding test result.,no

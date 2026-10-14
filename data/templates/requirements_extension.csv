@@ -1,0 +1,1 @@
+requirement_id,inspection_item,requirement_statement,expected_condition,applies_to_asset_types,stage_ref,target_type,target_ifc_class,evidence_pattern,required_classes,prohibited_classes,evidence_modality,checkability,detectability_tier,required_coverage,hold_point,notes

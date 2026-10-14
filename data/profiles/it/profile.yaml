@@ -1,0 +1,19 @@
+# CIEO jurisdiction profile
+profile_id: it
+name: Italy
+jurisdiction: IT
+language: it
+status: complete            # complete | scaffold | draft
+cieo_version: "1.0"
+description: >
+  National instruments cited in Italian bridge and road works: D.Lgs. 81/2008, NTC 2018, Codice della Strada, UNI national standards.
+builds_on: ["eu"]
+maintainer: CIEO maintainers
+coverage:
+  requirements_total: 37
+  bindings_verified: 9
+  bindings_proposed: 14
+  unmapped: 14
+files:
+  regulations: regulations.csv
+  clause_bindings: clause_bindings.csv

@@ -1,0 +1,5 @@
+regulation_id,short_name,full_title,jurisdiction,instrument_type,domain,in_force_from,source_url,notes
+REG-GB-CDM-2015,CDM 2015,The Construction (Design and Management) Regulations 2015 (SI 2015/51),GB,StatutoryInstrument,ConstructionManagement,2015-04-06,https://www.legislation.gov.uk/uksi/2015/51/contents,Part 4 regulation numbers verified against the official contents listing.
+REG-GB-WAHR-2005,Work at Height Regulations 2005,The Work at Height Regulations 2005 (SI 2005/735),GB,StatutoryInstrument,OccupationalSafety,2005-04-06,https://www.legislation.gov.uk/uksi/2005/735,Instrument confirmed in force; individual regulation numbers not yet verified.
+REG-GB-PPE-1992,PPE at Work Regulations 1992,"The Personal Protective Equipment at Work Regulations 1992 (SI 1992/2966), as amended",GB,StatutoryInstrument,OccupationalSafety,1993-01-01,https://www.legislation.gov.uk/uksi/1992/2966/contents,Amended in 2022.
+REG-GB-LOLER-1998,LOLER 1998,The Lifting Operations and Lifting Equipment Regulations 1998 (SI 1998/2307),GB,StatutoryInstrument,LiftingOperations,1998-12-05,https://www.legislation.gov.uk/uksi/1998/2307/contents,
